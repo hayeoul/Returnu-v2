@@ -1,0 +1,105 @@
+.found-detail-wrapper {
+  padding: 20px;
+  background-color: var(--bg);        /* 페이지 배경 */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.found-detail-card {
+  background: var(--card-bg);         /* 카드 배경 */
+  border-radius: 16px;
+  box-shadow: var(--shadow-hover, 0 6px 18px rgba(0,0,0,0.06));
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.found-detail-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  background: var(--card-hover);     /* 이미지 로딩 시 배경 */
+}
+
+.found-detail-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text);                /* 제목 색상 */
+  margin-bottom: 8px;
+}
+
+.found-detail-meta {
+  color: var(--text-info);           /* 보조 메타 정보 */
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.found-detail-description {
+  color: var(--text-sub);            /* 상세 설명 */
+  font-size: 1rem;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.found-detail-status {
+  background: var(--box-bg);         /* 상태박스 배경 */
+  color: var(--box-text);            /* 상태 텍스트 */
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.found-detail-created {
+  font-size: 0.8rem;
+  color: var(--subtitle);            /* 날짜, 작성자 등 */
+  margin-top: 10px;
+}
+
+.found-detail-claim-input {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.found-detail-claim-input input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #ccc);
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.found-detail-claim-button {
+  padding: 10px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.found-detail-claim-button:hover {
+  filter: brightness(0.88);
+}
+
+.found-detail-back {
+  margin-top: 24px;
+  padding: 10px;
+  background: var(--card-hover);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--subtitle);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: filter 0.15s;
+}
+.found-detail-back:hover {
+  filter: brightness(0.92);
+}

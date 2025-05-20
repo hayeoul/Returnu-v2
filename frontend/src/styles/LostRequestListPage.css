@@ -1,0 +1,84 @@
+.request-list-wrapper {
+  padding: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg); /* 전체 배경 적용 */
+}
+
+.request-list-title {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--primary); /* 강조 색상 */
+}
+
+.request-card {
+  display: flex;
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-info, 0 2px 8px rgba(0,0,0,0.06));
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  border: 1px solid var(--border-card, #e0e0e0);
+}
+.request-card:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadow-hover, 0 6px 18px rgba(0,0,0,0.13));
+  background: var(--card-hover);
+}
+
+.request-thumb img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  background: var(--card-hover);
+  border-right: 1px solid var(--border-card, #e0e0e0);
+}
+
+.request-info {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.request-info h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.request-info p {
+  margin: 4px 0;
+  font-size: 0.92rem;
+  color: var(--text-info);
+}
+
+.desc {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  line-height: 1.4;
+  margin: 6px 0;
+}
+
+.contact {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+.loading-text,
+.empty-text {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--subtitle);
+}
+
+.error-text {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--error, #ff5c5c);
+}

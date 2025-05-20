@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: var(--font-body, sans-serif);
+  background: var(--bg, #f9f9f9);
+  color: var(--text, #222);
+  transition: background 0.18s, color 0.18s;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.app-wrapper {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: var(--card-bg, #fff);
+  box-shadow: 0 0 10px var(--shadow-info, rgba(0,0,0,0.05));
+  /* 다크모드에서 그림자 변수/색상 theme.css에 추가 필요 */
+  transition: background-color 0.18s, box-shadow 0.18s;
+}

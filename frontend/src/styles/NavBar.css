@@ -1,0 +1,157 @@
+:root {
+  /* 네비게이션 */
+  --nav-bg: var(--card-bg, #fff);               /* 카드 배경 변수 활용 */
+  --nav-border: var(--border, #ccc);
+  --nav-text: var(--subtitle, #888);
+  --nav-text-active: var(--primary, #00c8ff);
+  --nav-icon-size: 24px;
+
+  /* FAB */
+  --fab-bg: var(--primary, #00c8ff);
+  --fab-hover-bg: rgba(0, 200, 255, 0.85);
+
+  /* 팝업 메뉴 */
+  --popup-bg: var(--card-bg, #fff);
+  --popup-shadow: rgba(0, 0, 0, 0.13);
+
+  /* 타이포그래피 */
+  --font-nav: var(--font-body, 'Noto Sans KR', sans-serif);
+  --font-popup: var(--font-body, 'Noto Sans KR', sans-serif);
+}
+
+/* 🌑 다크모드 전용 변수 덮어쓰기 */
+[data-theme="dark"] {
+  --nav-bg: var(--card-bg, #232527);
+  --nav-border: var(--border, #333);
+  --nav-text: var(--subtitle, #bbb);
+  --nav-text-active: var(--primary, #38b6ff);
+  --fab-bg: var(--primary, #38b6ff);
+  --fab-hover-bg: rgba(56, 182, 255, 0.82);
+  --popup-bg: var(--card-bg, #232527);
+  --popup-shadow: rgba(0,0,0,0.35);
+}
+
+/* --------------------------------------------------
+   2. 하단 내비게이션
+-------------------------------------------------- */
+.bottom-nav {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 64px;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--nav-bg);
+  border-top: 1px solid var(--nav-border);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  font-family: var(--font-nav);
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.nav-item svg {
+  display: block;
+  margin: 0 auto 2px;
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+  fill: currentColor;
+}
+
+.nav-item:hover {
+  color: var(--nav-text-active);
+}
+
+.nav-item.active {
+  color: var(--nav-text-active);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------
+   3. 플로팅 액션 버튼 (FAB)
+-------------------------------------------------- */
+.fab-fixed-area {
+  position: fixed;
+  left: 50%; bottom: calc(64px + env(safe-area-inset-bottom) - 28px);
+  transform: translateX(-50%);
+  z-index: 200;
+}
+
+.fab-button {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--fab-bg);
+  color: #fff;
+  font-size: 28px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s, box-shadow 0.2s;
+}
+
+.fab-button:hover {
+  transform: scale(1.06);
+  background: var(--fab-hover-bg);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.27);
+}
+
+/* --------------------------------------------------
+   4. 팝업 메뉴
+-------------------------------------------------- */
+.popup-menu {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--popup-bg);
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 8px 24px var(--popup-shadow);
+  z-index: 210;
+  animation: fadeInPop 0.2s ease-out;
+  font-family: var(--font-popup);
+}
+
+.popup-menu button {
+  background: var(--bg);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, color 0.2s;
+}
+
+.popup-menu button:hover {
+  background: var(--color-accent, #ff6b6b);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------
+   5. 애니메이션
+-------------------------------------------------- */
+@keyframes fadeInPop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

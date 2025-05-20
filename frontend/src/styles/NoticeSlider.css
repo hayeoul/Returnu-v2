@@ -1,0 +1,21 @@
+.notice-slider {
+  background: none;                  /* 배경 X (원하면 var(--card-bg)로 바꿔도 됨) */
+  padding: 12px 0;
+  margin: 20px 16px;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--color-accent, #ff7043);  /* 강조 컬러 변수 사용 */
+  font-weight: bold;
+  animation: fadeIn 0.4s ease;
+  line-height: 1.6;
+  border: none;
+  box-shadow: none;
+}
+
+.notice-content {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: var(--text, #37474f);         /* 일반 텍스트 컬러 변수 사용 */
+  font-weight: normal;
+}

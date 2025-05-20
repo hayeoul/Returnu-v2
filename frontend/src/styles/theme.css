@@ -1,0 +1,26 @@
+/* src/styles/theme.css */
+
+:root {
+  /* Primary Palette (Light) */
+  --color-primary: #00c8ff;      /* 시원한 블루 */
+  --color-accent:  #ff6b6b;      /* 눈에 띄는 레드 */
+  --color-bg:      #fcfcff;      /* 은은한 배경 */
+  --color-card-bg: #ffffff;      /* 카드 배경 */
+  --color-text:    #333333;      /* 기본 텍스트 */
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body:    'Noto Sans KR', sans-serif;
+
+  /* Spacing */
+  --space-base: 1rem;
+}
+
+/* 🌑 다크모드 */
+[data-theme="dark"] {
+  --color-primary: #38b6ff;      /* 더 깊은 블루 */
+  --color-accent:  #ff7675;      /* 더 부드러운 레드 */
+  --color-bg:      #16181e;      /* 다크 배경 */
+  --color-card-bg: #23242b;      /* 카드 다크 배경 */
+  --color-text:    #e0e0e0;      /* 밝은 텍스트 */
+}

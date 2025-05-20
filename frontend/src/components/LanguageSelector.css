@@ -1,0 +1,10 @@
+.lang-selector.dark .lang-dropdown {
+  background: #222;
+  border-color: #444;
+}
+.lang-selector .lang-btn:hover, .lang-selector .lang-opt:hover {
+  background: #cfd8dc22;
+}
+.lang-selector.dark .lang-opt:hover {
+  background: #444b;
+}

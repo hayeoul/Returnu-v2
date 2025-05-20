@@ -1,0 +1,162 @@
+body {
+  background: #1a1b22;
+}
+
+.mypage-root {
+  max-width: 480px;
+  margin: 38px auto;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+.mypage-title {
+  font-size: 2rem;
+  color: #29b6f6;
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: bold;
+  letter-spacing: -1.5px;
+}
+
+.mypage-section {
+  background: #fff;
+  border-radius: 20px;
+  margin: 18px 0;
+  padding: 26px 26px 18px 26px;
+  box-shadow: 0 2px 14px #1a234622;
+}
+
+.mypage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.mypage-card {
+  background: #e1f5fe;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #e3f2fd99;
+  padding: 18px 20px 13px 18px;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  border: 1.3px solid #b3e5fc;
+  transition: transform .13s, box-shadow .13s;
+}
+.mypage-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px #c2e5f677;
+}
+
+.mypage-thumb {
+  width: 50px; height: 50px;
+  border-radius: 10px;
+  background: #fff;
+  object-fit: cover;
+  border: 1px solid #d0e0ef;
+}
+.mypage-thumb.empty {
+  display: flex;
+  align-items: center; justify-content: center;
+  color: #b2bec3;
+  font-size: 2rem;
+}
+
+.mypage-card-main {
+  flex: 1;
+  display: flex; flex-direction: column;
+  gap: 2px;
+}
+.mypage-card-title {
+  font-weight: 600;
+  font-size: 1.08rem;
+  margin-bottom: 2px;
+}
+.mypage-card-desc {
+  font-size: 14px;
+  color: #444;
+}
+.mypage-card-location {
+  font-size: 13px;
+  color: #90caf9;
+}
+.mypage-card-date {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.mypage-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 13px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  vertical-align: middle;
+}
+.mypage-badge.waiting {
+  background: #b2ebf2;
+  color: #006064;
+}
+.mypage-badge.done {
+  background: #ffe082;
+  color: #bf360c;
+}
+
+/* =================== */
+/* 다크모드 전환 부분!  */
+/* =================== */
+body.dark .mypage-root,
+body[data-theme="dark"] .mypage-root {
+  background: #181920 !important;
+}
+body.dark .mypage-section,
+body[data-theme="dark"] .mypage-section {
+  background: #23242c !important;
+  color: #e0e6ef !important;
+  box-shadow: 0 2px 16px #11131b66 !important;
+}
+body.dark .mypage-title,
+body[data-theme="dark"] .mypage-title {
+  color: #58ccff !important;
+}
+body.dark .mypage-card,
+body[data-theme="dark"] .mypage-card {
+  background: #222a37 !important;
+  border: 1.3px solid #31435a;
+  box-shadow: 0 2px 16px #101a2770 !important;
+  color: #c2e9fc !important;
+}
+body.dark .mypage-thumb,
+body[data-theme="dark"] .mypage-thumb {
+  background: #1a202b !important;
+  border: 1px solid #3e5166 !important;
+}
+body.dark .mypage-thumb.empty,
+body[data-theme="dark"] .mypage-thumb.empty {
+  color: #7d8fa0 !important;
+  background: #293141 !important;
+}
+body.dark .mypage-card-title,
+body[data-theme="dark"] .mypage-card-title {
+  color: #9fd8ff !important;
+}
+body.dark .mypage-card-location,
+body[data-theme="dark"] .mypage-card-location {
+  color: #90caf9 !important;
+}
+body.dark .mypage-card-date,
+body[data-theme="dark"] .mypage-card-date {
+  color: #b0bec5 !important;
+}
+body.dark .mypage-badge.waiting,
+body[data-theme="dark"] .mypage-badge.waiting {
+  background: #137178 !important;
+  color: #e0f7fa !important;
+}
+body.dark .mypage-badge.done,
+body[data-theme="dark"] .mypage-badge.done {
+  background: #ffe082 !important;
+  color: #bf360c !important;
+}
