@@ -15,10 +15,13 @@ export default function LostRequestPage() {
     date: "",
     location: "",
     description: "",
-    category: "기타",
     phone: "",
     email: "",
     image: null,
+<<<<<<< HEAD
+=======
+    student_id: "",
+>>>>>>> f59e03b (수정본2)
   });
   const [preview, setPreview] = useState(null);
   const [error, setError] = useState("");
@@ -105,6 +108,7 @@ export default function LostRequestPage() {
           placeholder={t.requestFormLocationPh || "예: 학생회관, 도서관"}
         />
 
+<<<<<<< HEAD
         <label className="input-label">{t.requestFormCategoryLabel || "분류 *"}</label>
         <select
           className="input"
@@ -118,6 +122,9 @@ export default function LostRequestPage() {
           <option value="이어폰">{t.categoryEarphone || "이어폰"}</option>
           <option value="기타">{t.categoryEtc || "기타"}</option>
         </select>
+=======
+        {/* ✅ 카테고리(분류) 관련 코드 완전 삭제 */}
+>>>>>>> f59e03b (수정본2)
 
         <label className="input-label">{t.requestFormDescLabel || "상세 설명 *"}</label>
         <textarea

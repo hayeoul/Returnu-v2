@@ -17,7 +17,7 @@ export default function LostListPage() {
 
   const queryParams = new URLSearchParams(location.search);
   const query = queryParams.get("query") || "";
-  const cat = queryParams.get("cat") || "전체";
+  // ✅ 카테고리(cat) 관련 변수 완전 제거!
   const user = JSON.parse(localStorage.getItem("user"));
 
   const formatDate = (dateString) => {
@@ -49,9 +49,15 @@ export default function LostListPage() {
       setLoading(true);
       setError(null);
       try {
+<<<<<<< HEAD
         const catParam = cat === t.lostListAll || "전체" ? "" : `&cat=${encodeURIComponent(cat)}`;
         const statusParam = status === t.lostListAll || "전체" ? "" : `&status=${encodeURIComponent(status)}`;
         const url = `http://localhost:8090/api/lost-items/search?query=${encodeURIComponent(query)}${catParam}${statusParam}&order=${order}`;
+=======
+        // ✅ cat 관련 쿼리/파라미터/조건문 모두 삭제
+        const statusParam = status === "전체" ? "" : `&status=${encodeURIComponent(status)}`;
+        const url = `http://localhost:8090/api/lost-items/search?query=${encodeURIComponent(query)}${statusParam}&order=${order}`;
+>>>>>>> f59e03b (수정본2)
 
         const res = await fetch(url);
         if (!res.ok) throw new Error(t.lostListFetchError || "목록을 불러올 수 없습니다.");
@@ -65,7 +71,19 @@ export default function LostListPage() {
     }
 
     fetchData();
+<<<<<<< HEAD
   }, [query, cat, order, status, t]);
+=======
+  }, [query, order, status]); // ✅ cat 빠짐
+
+  // ✅ pagination 계산
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const paginated = items.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  const handlePageClick = (page) => {
+    setCurrentPage(page);
+  };
+>>>>>>> f59e03b (수정본2)
 
   return (
     <div className="lost-list-wrapper">

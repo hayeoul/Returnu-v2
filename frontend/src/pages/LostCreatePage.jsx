@@ -13,7 +13,6 @@ export default function LostCreatePage() {
     location: "",
     date: "",
     description: "",
-    category: "",
     image: null,
   });
   const [preview, setPreview] = useState(null);
@@ -34,6 +33,7 @@ export default function LostCreatePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     if (!form.title.trim()) return setError(t.createLostItemTitleRequired || "물건 이름을 입력해주세요.");
     if (!form.location.trim()) return setError(t.createLostItemLocationRequired || "분실 장소를 입력해주세요.");
     if (!form.date) return setError(t.createLostItemDateRequired || "분실 날짜를 선택해주세요.");
@@ -43,6 +43,20 @@ export default function LostCreatePage() {
     Object.entries(form).forEach(([key, val]) => {
       if (val) formData.append(key, val);
     });
+=======
+
+    if (!form.title.trim()) return setError("물건 이름을 입력해주세요.");
+    if (!form.location.trim()) return setError("분실 장소를 입력해주세요.");
+    if (!form.date) return setError("분실 날짜를 선택해주세요.");
+
+    const formData = new FormData();
+    for (const key in form) {
+      if (form[key]) formData.append(key, form[key]);
+    }
+    if (user?.student_id) {
+      formData.append("student_id", user.student_id);
+    }
+>>>>>>> f59e03b (수정본2)
 
     try {
       setIsLoading(true);
@@ -67,7 +81,6 @@ export default function LostCreatePage() {
       location: "",
       date: "",
       description: "",
-      category: "",
       image: null,
     });
     setPreview(null);
@@ -75,12 +88,20 @@ export default function LostCreatePage() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="app-wrapper page-container">
       <h1 className="title">{t.createLostItemTitle || "📮 분실물 등록"}</h1>
 
       <form onSubmit={handleSubmit} className="form-box">
         <p className="form-note">
           {t.createLostItemNote || "* 필수 항목은 모두 입력해야 합니다."}
+=======
+    <div className="app-wrapper">
+      <h1 className="title">📮 분실물 등록</h1>
+      <form onSubmit={handleSubmit} style={{ padding: "0 16px" }}>
+        <p style={{ fontSize: "0.9rem", color: "#999", marginBottom: "12px" }}>
+          * 필수 항목은 모두 입력해야 합니다.
+>>>>>>> f59e03b (수정본2)
         </p>
 
         {error && <p className="form-error">⚠️ {error}</p>}
@@ -112,6 +133,7 @@ export default function LostCreatePage() {
           onChange={handleChange}
         />
 
+<<<<<<< HEAD
         <label className="input-label">{t.createLostItemCategoryLabel || "카테고리 *"}</label>
         <select
           name="category"
@@ -127,6 +149,9 @@ export default function LostCreatePage() {
           <option value="열쇠">{t.categoryKey || "열쇠"}</option>
           <option value="기타">{t.categoryEtc || "기타"}</option>
         </select>
+=======
+        {/* 카테고리 선택 UI 완전 삭제 */}
+>>>>>>> f59e03b (수정본2)
 
         <label className="input-label">{t.createLostItemDescLabel || "자세한 설명"}</label>
         <textarea
